@@ -1,22 +1,10 @@
-/*Here it is shown how to make to basic usage of Eigen3 tools for
- computations related to quantum information.*/
-
 #include "TBQCP.h"
 #include <cmath>
 #include <fstream>
 
 using std::cout;
 using std::endl;
-/*
-Matrix<complex<double>, dim, dim> Hamil(const Matrix<complex<double>, dim, dim> &U, struct params &myp)
-{
-    Matrix<complex<double>, dim, dim> H;
-    H(0,0)=1.; H(1,1)=-1.; H(0,1) = cos(M_PI_4* myp.t); H(1,0) = H(0,1);
 
-    H = complex<double>(0., -1.) * H * U;
-
-    return H;
-}*/
 double guess_ctrl(struct params &myp)
 {
     double y = 0.;
