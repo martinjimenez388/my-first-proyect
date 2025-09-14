@@ -1,0 +1,1 @@
+Here it is shown how to make to basic usage of Eigen3 tools for computations related to quantum information. In particular, we implement an optimization method to achieve the optimal control field to perform a qubit-state teleportation task in a three-qubit system.
