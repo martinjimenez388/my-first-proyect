@@ -12,7 +12,7 @@ double guess_ctrl(struct params &myp)
 
     if (myp.t<t0)  y = sin(M_PI_2*myp.t/t0);
     else if (myp.t>myp.Tf-t0) y = sin(M_PI_2*(myp.t-myp.Tf)/t0);
-    else y = 1.;
+    else y = 1.0;
     
     return y*y;
 }
@@ -28,7 +28,7 @@ int main()
     Vector<complex<double>, 4> bell_state;
     struct params myp;
     complex<double> *save_Ot, *save_psi;//Saves values of the state or the propagator through the time grid.
-    double eta = 5.e-2;//The correction rate of the control fields.
+    double eta = 1.e-2;//The correction rate of the control fields.
     int niter = 20;//The number of iterations of the algorithm.
     
     myp.Tf = 1.2;
@@ -93,6 +93,7 @@ int main()
     myp.t = 0.;
     psi = psi_init;
     std::ofstream arch("corr_control_fields.csv", std::ios::out);
+    arch << "Time,Eps0,Eps1" << endl;
     for (int i = 0; i <= ntsteps; i++)
     {
         arch << myp.t << ",";
