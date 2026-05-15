@@ -8,11 +8,12 @@ using std::endl;
 double guess_ctrl(struct params &myp)
 {
     double y = 0.;
-    double t0 = myp.Tf/30.;
+    //double t0 = myp.Tf/30.;
 
-    if (myp.t<t0)  y = sin(M_PI_2*myp.t/t0);
-    else if (myp.t>myp.Tf-t0) y = sin(M_PI_2*(myp.t-myp.Tf)/t0);
-    else y = 1.0;
+    //if (myp.t<t0)  y = sin(M_PI_2*myp.t/t0);
+    //else if (myp.t>myp.Tf-t0) y = sin(M_PI_2*(myp.t-myp.Tf)/t0);
+    //else y = 1.0;
+    y = cos(M_PI*myp.t/myp.Tf);
     
     return y*y;
 }
