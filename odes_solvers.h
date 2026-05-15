@@ -29,6 +29,7 @@ class Solver {
   public:
     Ty rhs (const Ty &, struct params &);
     Ty Euler (const Ty &, struct params &, const function<Ty (const Ty & , struct params &)> &);
+    Ty Heun (const Ty &, struct params &, const function<Ty (const Ty & , struct params &)> &);
     Ty RK4(const Ty &, struct params &, const function<Ty (const Ty &, struct params &)> &);
 };
 
@@ -37,8 +38,22 @@ Ty Solver<Ty>::Euler(const Ty &x, struct params &myp, const function<Ty (const T
     Ty y;
 
     y = x + myp.dir*myp.dt * f(x, myp);
+    myp.t += myp.dir*myp.dt;
 
     return y;
+}
+
+template <class Ty>
+Ty Solver<Ty>::Heun(const Ty &x, struct params &myp, const function<Ty (const Ty &, struct params &)> &f){
+    Ty y, k1, k2;
+    double tst = myp.dir*myp.dt;
+
+    k1 = tst* f(x, myp)
+    myp.t += tst;
+    k2 = tst* f(x + k1, myp);
+    y = x + 0.5*(k1 + k2);
+
+    return res;
 }
 
 template <class Ty>
