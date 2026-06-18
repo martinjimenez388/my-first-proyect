@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my-first-proyect"
+version = "0.1.0"
+description = "A minimal Python project."
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "Martin" }]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/martinjimenez388/my-first-proyect"
+
+[tool.setuptools]
+packages = ["find:"]

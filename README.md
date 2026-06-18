@@ -39,32 +39,26 @@ The training loop follows these steps:
 
 ## Requirements
 
-- Python 3.10+
-- PyTorch or JAX
-- NumPy
-- SciPy
-- Matplotlib
+- Python 3.12+
+- PyTorch 2.10.0+
+- QuTiP 5.3+
 
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/martinjimenez388/my-first-proyect.git
+cd my-first-proyect
 pip install -r requirements.txt
 ```
+Follow the instructions to install [Pytorch](https://pytorch.org/get-started/locally/#windows-installation).
 
 ## Usage
 
-Run the main simulation script:
+Open the example notebooks:
 
 ```bash
-python src/main.py
-```
-
-Or open the example notebook:
-
-```bash
-jupyter notebook notebooks/example.ipynb
+jupyter notebook Examples/PINN_control_GATE_3levs_FreqTrick.ipynb
+jupyter notebook Examples/PINN_control_4levels_pre_trained.ipynb
 ```
 
 ## Loss Function
