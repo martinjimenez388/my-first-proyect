@@ -31,9 +31,7 @@ The training loop follows these steps:
 ```text
 .
 ├── src/            # Core implementation
-├── notebooks/      # Example simulations and exploratory analysis
-├── data/           # Input files and generated results
-├── figures/        # Plots and visualizations
+├── Examples/      # Notebooks with simulations and exploratory analysis
 └── README.md
 ```
 
@@ -83,11 +81,3 @@ This framework can be used to learn a control protocol that transfers an initial
 ## Results
 
 Add figures, training curves, and example trajectories here once available.
-
-## Citation
-
-If you use this repository in your research, please cite the associated paper or preprint.
-
-## License
-
-Add your chosen license here.
