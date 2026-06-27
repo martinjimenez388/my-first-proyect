@@ -81,5 +81,11 @@ This framework can be used to learn a control protocol that transfers an initial
 ## Results
 
 Add figures, training curves, and example trajectories here once available.
-![Mean fidelity dynamics under the optimized fields for three different quantum gates using PINN's. The average was taken out over 500 Haar random initial states, always with zero initial population in the 3rd level.](figs/MeanFidelity_ThreeLevel_PINN.pdf)
-![Mean fidelity dynamics for a 4-level system under the optimized fields for three different quantum gates with low leakage. The average was taken out over 500 Haar random initial states, always with zero initial population in the 3rd and 4th level.](figs/MeanFidelity_FourLevel_PINN.pdf)
+<p align="center">
+  <img src="figs/MeanFidelity_ThreeLevel_PINN_page-0001.jpg" width="450"><br>
+  <em>Mean fidelity dynamics under the optimized fields for three different quantum gates using PINN's. The average was taken out over 500 Haar random initial states, always with zero initial population in the 3rd level.</em>
+</p>
+<p align="center">
+  <img src="figs/MeanFidelity_FourLevel_PINN_page-0001.jpg" width="450"><br>
+  <em>Mean fidelity dynamics for a 4-level system under the optimized fields for three different quantum gates with low leakage. The average was taken out over 500 Haar random initial states, always with zero initial population in the 3rd and 4th level.</em>
+</p>
