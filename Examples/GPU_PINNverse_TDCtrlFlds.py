@@ -3,7 +3,9 @@
 
 # Here I try to learn the control fields of a time-dependent Hamiltonian from a set of observable data.
 
-#import random
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
 import torch as tc
 import numpy as np
 import qutip as qt
@@ -16,7 +18,6 @@ import torch.nn as nn
 from tqdm import tqdm
 import sys
 from typing import List
-import os
 sys.path.insert(0, '../../')
 import function as my
 
@@ -45,8 +46,6 @@ else:
   Nedo= Liedim*nist# Number of differential equations to solve
   Ncoll = 4#Number of collapse operators
 
-
-# In[3]:
 
 
 if loaded:
@@ -96,8 +95,6 @@ else:
           ctrls[:,i] = gen_rdn_Fourier(t_points, nfreq)
 
 
-# In[4]:
-
 
 fig, ax = plt.subplots()
 for i in range(Nfield):
@@ -107,9 +104,6 @@ ax.set_xlabel("Time")
 ax.set_ylabel("Amplitude")
 ax.legend()
 plt.show()
-
-
-# In[5]:
 
 
 def inv_sigmoid(y):
@@ -204,9 +198,6 @@ class SIN(tc.nn.Module):
         return tc.sin(x)
 
 
-# In[6]:
-
-
 if FouFeat:
         neuronio = [128, 128]
 
@@ -252,7 +243,6 @@ else:
         #X_vector.parametro
 
 X_vector = X_vector.to(device)
-
 
 if (Nqb==1):
     def calculate_physics_loss(commcoeff: tc.Tensor, collcoef: tc.Tensor, cnstcoef: tc.Tensor, Gammas: tc.Tensor, Obs: tc.Tensor, derivs: tc.Tensor, Jt: List[tc.Tensor]):
@@ -498,10 +488,7 @@ if (Nqb==1):
 #        cnstcoef[3, ic(3,i)] = -1
 
 
-# In[ ]:
-
-
-epocas  = 5000
+epocas  = 3000
 
 LOSS    = []
 LOSS1   = []
@@ -607,7 +594,7 @@ plt.show()
 X_  = X_vector(time).detach().cpu().numpy()
 
 w_opt=X_[:,-Nfield:]#, label="NN approx.")
-gam_opt = (X_vector.parametro).detach().numpy()
+gam_opt = (X_vector.parametro).detach().cpu().numpy()
 colors = ['r', 'b', 'k'] if Nqb==1 else ['r', 'b', 'k', 'g', 'm', 'c']
 fig, ax = plt.subplots()
 
